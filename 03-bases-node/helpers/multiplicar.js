@@ -5,7 +5,8 @@ const crearArchivo = ( base = 5, listar = false, hasta = 10 ) => {
 
     return new Promise( ( resolve, reject) => {
 
-        let salida, consola = '';
+        let salida = '';
+        let consola = '';
     
         for (let i = 1; i <=hasta; i++) {
             salida += `${base} x ${i} = ${base * i}\n`;
@@ -16,12 +17,13 @@ const crearArchivo = ( base = 5, listar = false, hasta = 10 ) => {
         if ( listar ) {
             console.log('======'.green)
             console.log(' Tabla del:'.yellow, colors.blue(base));
+            console.log('======'.green)
             console.log(consola);
            }
    
 
         
-        fs.writeFileSync(`tabla-${ base }.txt`, salida);
+        fs.writeFileSync(`./salida/tabla-${ base }.txt`, salida);
         
         resolve(`tabla-${ base }.txt`);
     
