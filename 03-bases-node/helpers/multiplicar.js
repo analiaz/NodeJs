@@ -9,10 +9,10 @@ const crearArchivo = ( base = 5, listar = false ) => {
             salida += `${base} x ${i} = ${base * i}\n`;
         }
         
-//        if ( listar ) {
+        if ( listar ) {
             console.log(' Tabla del:', base);
             console.log(salida);
-//           }
+           }
    
 
         
