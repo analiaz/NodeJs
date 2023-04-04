@@ -9,8 +9,13 @@ const argv = require('yargs')
                 type: 'boolean',
                 default: false,
                 describe: 'muestra la tabla de multiplicar en consola'
-            }
-            )
+            })
+            .options('h', {
+                alias: 'hasta',
+                type: 'number',
+                default: 10,
+                describe: 'muestra la tabla de multiplicar en consola hasta el numero subido'
+            })
             .check( ( argv, options ) => {
                 if (isNaN( argv.b ) ){
                     throw 'la base debe ser un numeros'

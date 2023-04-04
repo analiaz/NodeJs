@@ -1,20 +1,22 @@
 const fs = require('fs');
 const colors = require('colors');
 
-const crearArchivo = ( base = 5, listar = false ) => {
+const crearArchivo = ( base = 5, listar = false, hasta = 10 ) => {
 
     return new Promise( ( resolve, reject) => {
 
-        let salida = '';
+        let salida, consola = '';
     
-        for (let i = 1; i <=10; i++) {
-            salida += `${base} ${'x'.green} ${i} = ${base * i}\n`;
+        for (let i = 1; i <=hasta; i++) {
+            salida += `${base} x ${i} = ${base * i}\n`;
+            consola += `${base} ${'x'.green} ${i} = ${base * i}\n`;
+
         }
         
         if ( listar ) {
             console.log('======'.green)
             console.log(' Tabla del:'.yellow, colors.blue(base));
-            console.log(salida);
+            console.log(consola);
            }
    
 
