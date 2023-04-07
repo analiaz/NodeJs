@@ -8,15 +8,16 @@ const main = async() => {
     const tareas = new Tareas();
 
     do {
+        //imprimir el menu
         opt = await inquirerMenu();
 
         switch (opt) {
             case '1':
                 const desc = await leerInput('Descripcion:');
                 tareas.crearTarea( desc );
-                break;
+            break;
             case '2':
-                console.log( tareas._listado );
+                console.log( tareas.listadoArr );
             break;
         }
         
