@@ -1,4 +1,4 @@
-
+const Tarea = require('./tarea');
 
 class Tareas {
     
@@ -8,6 +8,11 @@ class Tareas {
         this._listado = {};
     }
 
+    crearTarea( desc = ''){
+        const tarea = new Tarea(desc);
+
+        this._listado[Tareas.id] = tarea;
+    }
 
 }
 
